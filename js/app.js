@@ -8,6 +8,12 @@
 
 const pricePerKm = 0.21
 
+const kmDistance = document.querySelector('.distance')
+
+let ticketPrice = pricePerKm * kmDistance
+
+console.log(pricePerKm, kmDistance, ticketPrice)
+
 //Il prezzo del biglietto è definito in base ai km (0.21 € al km)
     // va applicato uno sconto del 20% per i minorenni
 const discountElementMinor = document.getElementById('discount-price-20')
@@ -17,4 +23,14 @@ const discountElementSenior = document.getElementById('discount-price-40')
 
 let discount = 0 
 
-console.log(pricePerKm, discountElementMinor, discountElementSenior, discount)
+console.log(discountElementMinor, discountElementSenior, discount)
+
+const generateBtnElement = document.querySelector ('.generate')
+
+const cancelBtnElement = document.querySelector ('.cancel')
+
+console.log(generateBtnElement, cancelBtnElement)
+
+generateBtnElement.addEventListener('click', function () {
+    
+})
