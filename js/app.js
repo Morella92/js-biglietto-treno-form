@@ -7,23 +7,28 @@
 
 
 const pricePerKm = 0.21
+console.log(pricePerKm)
 
-const kmDistance = document.querySelector('.distance')
+const kmDistance = document.getElementById('distance')
+console.log(kmDistance.value)
 
-let ticketPrice = parseFloat(pricePerKm * kmDistance)
+let agePassenger = document.getElementById ('age_passenger')
+console.log(agePassenger)
 
-console.log(pricePerKm, kmDistance, ticketPrice)
+const normalPrice = document.getElementById('normal-price')
+console.log(normalPrice)
 
 //Il prezzo del biglietto è definito in base ai km (0.21 € al km)
     // va applicato uno sconto del 20% per i minorenni
 const discountElementMinor = document.getElementById('discount-price-20')
+console.log(discountElementMinor.value)
 
     // va applicato uno sconto del 40% per gli over 65
 const discountElementSenior = document.getElementById('discount-price-40')
+console.log(discountElementSenior.value)
 
 let discount = 0 
-
-console.log(discountElementMinor, discountElementSenior, discount)
+console.log(discount)
 
 const generateBtnElement = document.querySelector ('.generate')
 
@@ -31,20 +36,37 @@ const cancelBtnElement = document.querySelector ('.cancel')
 
 console.log(generateBtnElement, cancelBtnElement)
 
-// let discountedPrice = parseFloat (ticketPrice - discount)
-
 generateBtnElement.addEventListener('click', function () {
 
-    if(discountElementMinor) {
+    console.log(kmDistance.value)
 
-        discount = parseFloat(ticketPrice * 0.2);
+    // console.log(agePassenger.value)
 
-        console.log('sconto applicato')
+    console.log(discountElementMinor)
+
+    console.log(discountElementSenior)
+
+    let ticketPrice = parseFloat(pricePerKm * kmDistance.value)
+    console.log(ticketPrice)
+
+    if(discountElementMinor) 
+    {
+        discount = 0.2;
+
+        let discountedPrice = ticketPrice * discount;
+        console.log(discountedPrice)
+
+        console.log('sconto applicato:' + (ticketPrice - discountedPrice))  
+
+    } else if(discountElementSenior) {
+
+        discount = 0.4;
         
-    } else if (discountElementSenior) {
+        let discountedPrice = ticketPrice * discount;
+        console.log(discountedPrice)
 
-        discount = parseFloat(ticketPrice * 0.4);
-        console.log('sconto applicato')
-        
+        console.log('sconto applicato:' + (ticketPrice - discountedPrice))  
     }
+
+    
 })
