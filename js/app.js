@@ -10,7 +10,7 @@ const pricePerKm = 0.21
 
 const kmDistance = document.querySelector('.distance')
 
-let ticketPrice = pricePerKm * kmDistance
+let ticketPrice = parseFloat(pricePerKm * kmDistance)
 
 console.log(pricePerKm, kmDistance, ticketPrice)
 
@@ -31,6 +31,20 @@ const cancelBtnElement = document.querySelector ('.cancel')
 
 console.log(generateBtnElement, cancelBtnElement)
 
+// let discountedPrice = parseFloat (ticketPrice - discount)
+
 generateBtnElement.addEventListener('click', function () {
-    
+
+    if(discountElementMinor) {
+
+        discount = parseFloat(ticketPrice * 0.2);
+
+        console.log('sconto applicato')
+        
+    } else if (discountElementSenior) {
+
+        discount = parseFloat(ticketPrice * 0.4);
+        console.log('sconto applicato')
+        
+    }
 })
