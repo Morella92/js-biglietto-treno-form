@@ -1,11 +1,5 @@
-// inserire in un input il numero di km da percorrere
-// selezionare da una select il tipo di sconto da applicare (3 scelte: sconto minorenne, sconto over 65, nessuno sconto)
-// Al click sul pulsante calcolare il prezzo del biglietto:
-// 
 
-
-
-
+//Il prezzo del biglietto è definito in base ai km (0.21 € al km)
 const pricePerKm = 0.21
 console.log(pricePerKm)
 
@@ -17,15 +11,7 @@ console.log(agePassenger.value)
 
 const normalPrice = document.getElementById('normal-price')
 console.log(normalPrice.value)
-
-//Il prezzo del biglietto è definito in base ai km (0.21 € al km)
-    // va applicato uno sconto del 20% per i minorenni
-const discountElementMinor = document.getElementById('discount-price-20')
-console.log(discountElementMinor)
-
-    // va applicato uno sconto del 40% per gli over 65
-const discountElementSenior = document.getElementById('discount-price-40')
-console.log(discountElementSenior)
+    
 
 let discount = 0 
 console.log(discount)
@@ -36,6 +22,8 @@ const cancelBtnElement = document.getElementById('cancel')
 
 console.log(generateBtnElement, cancelBtnElement)
 
+// Al click sul pulsante calcolare il prezzo del biglietto:
+
 generateBtnElement.addEventListener('click', function () {
 
     console.log(kmDistance.value)
@@ -45,10 +33,13 @@ generateBtnElement.addEventListener('click', function () {
     const ticketPrice = parseFloat(pricePerKm * kmDistance.value)
     console.log(ticketPrice)
 
+        // va applicato uno sconto del 20% per i minorenni
+
     if(agePassenger.value === 'minor-age') {
 
         discount = 0.2; 
 
+        // va applicato uno sconto del 40% per gli over 65
     } else if(agePassenger.value === 'over-age') {
 
         discount = 0.4;
@@ -64,6 +55,6 @@ generateBtnElement.addEventListener('click', function () {
 
 
 
-//     
+   
 
-//     
+   
