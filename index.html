@@ -20,7 +20,7 @@
         <div class="row flex-wrap">
             <div class="col-4 text-center font-color">
                 <label for="nomeCognome">Nome e Cognome</label>
-                <input type="text" class="form-control travel-details mt-2">
+                <input type="text" class="form-control full-name travel-details mt-2">
             </div>
             <div class="col-4 text-center font-color">
                 <label for="km">Km da percorrere</label>
@@ -32,13 +32,13 @@
                     <option value="">
                         --seleziona età--
                     </option>
-                    <option value="normal-price" id="normal-price">
+                    <option value="normal-price">
                         Per i clienti dai 18 ai 64 anni
                     </option>
-                    <option value="minor-age" id="discount-price-20">
+                    <option value="minor-age">
                         Minorenne: fino ai 17 anni
                     </option>
-                    <option value="over-age" id="discount-price-40">
+                    <option value="over-age">
                         Over 65 anni
                     </option>
                 </select>
@@ -50,6 +50,63 @@
         </div>
     </div>
 
+    <div class="container py-5">
+        <h1 class="text-center text-white text-uppercase fs-2">
+            Il tuo biglietto
+        </h1>
+    </div>
+
+    <div class="container py-3 bg-white rounded">
+        <div class="row">
+            <div class="col text-uppercase fw-bold mb-2">
+                dettaglio passeggeri
+            </div>
+            <div class="row">
+                <div class="col-4 border bg-secondary">
+                    <h5> Nome passeggero</h5>
+                    <p id="passenger-name">
+                        -
+                    </p>
+                </div>
+                <div class="col-8 border">
+                    <div class="row">
+                        <div class="col">
+                            <h5>
+                                Offerta
+                            </h5>
+                            <p id="offer-applied">
+                                -
+                            </p>
+                        </div>
+                        <div class="col">
+                            <h5>
+                                Carrozza
+                            </h5>
+                            <p id="train-seat">
+                                7
+                            </p>
+                        </div>
+                        <div class="col">
+                            <h5>
+                                Codice CP
+                            </h5>
+                            <p id="code-random">
+                                <!-- 54128 -->
+                            </p>
+                        </div>
+                        <div class="col">
+                            <h5>
+                                Costo biglietto
+                            </h5>
+                            <p id="final-price">
+                                -
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/app.js"></script>
 </body>
 </html>
